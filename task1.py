@@ -13,5 +13,4 @@ def task1(in_df, path_to_save):
     out_df = in_df.filter(f.col(region) == 'UA').select(f.col(title))
     out_df.write.csv(path_to_save, header=True, mode='overwrite')
 
-
     return out_df

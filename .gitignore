@@ -263,6 +263,11 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm+all
 
+
 imdb-data/
 er.name
-imdb_result/
+imdb_result1/
+imdb-result2
+
+
+

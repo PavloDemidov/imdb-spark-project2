@@ -32,3 +32,21 @@ def read_akas(session, path, schema):
     df = df.withColumnRenamed('ty', types)
     df = df.withColumnRenamed('att', attributes)
     return df
+
+def read_name_basics(session, path, schema):
+    """ Чтение и базовая подготовка данных по набору данных name.basics
+     Аргументы:
+         session: spark сессия
+         path: путь к CSV-файлу
+         schema: схема набора данных
+
+     Результат:
+          dataframe - датафрейм
+    """
+    df = read_df(session, path, schema)
+    df = df.select('*',
+                   f.split(f.col(primaryProfession), ',').alias('pP'),
+                   f.split(f.col(knownForTitles), ',').alias('kFT')).drop(knownForTitles, primaryProfession)
+    df = df.withColumnRenamed('kFT', knownForTitles)
+    df = df.withColumnRenamed('pP', primaryProfession)
+    return df
