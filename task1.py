@@ -8,7 +8,7 @@ def task1(in_df, path_to_save):
          in_df: фрейм даних
          path_to_save: шлях для збереження кадру даних
      Повернення:
-         out_df: сформований кадр даних
+         out_df: сформований набір даних
     """
     out_df = in_df.filter(f.col(region) == 'UA').select(f.col(title))
     out_df.write.csv(path_to_save, header=True, mode='overwrite')
