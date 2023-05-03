@@ -16,7 +16,7 @@ def read_df(session, path, schema):
 
 
 def read_akas(session, path, schema):
-    """ Читання та підготовка даних для набору даних akas
+    """ Читання та підготовка даних на основі набору даних akas
      Аргументи:
         session: spark сесія
         path: шлях до файлу csv
@@ -34,9 +34,9 @@ def read_akas(session, path, schema):
     return df
 
 def read_name_basics(session, path, schema):
-    """ Чтение и базовая подготовка данных по набору данных name.basics
+    """ Чтение и базовая подготовка данных на основі данных name.basics
      Аргументы:
-         session: spark сессия
+         session: spark сесія
          path: путь к CSV-файлу
          schema: схема набора данных
 
@@ -49,4 +49,22 @@ def read_name_basics(session, path, schema):
                    f.split(f.col(knownForTitles), ',').alias('kFT')).drop(knownForTitles, primaryProfession)
     df = df.withColumnRenamed('kFT', knownForTitles)
     df = df.withColumnRenamed('pP', primaryProfession)
+    return df
+
+
+def read_title_basics(session, path, schema):
+    """ Читання та підготовка баз даних на основі набору даних title_basics
+    Аргументи:
+         session: spark сесія
+         path: путь к CSV-файлу
+         schema: схема набора данных
+
+     Результат:
+         dataframe - датафрейм
+    """
+
+    df = read_df(session, path, schema)
+    df = df.select('*',
+                   f.split(f.col(genres), ',').alias('gen')).drop(genres)
+    df = df.withColumnRenamed('gen', genres)
     return df

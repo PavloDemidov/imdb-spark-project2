@@ -7,7 +7,9 @@ from pyspark.sql import SparkSession
 from read_write import *
 from settings import *
 from task1 import *
+
 from task2 import *
+from task3 import *
 
 os.environ['PYSPARK_PYTHON'] = sys.executable
 os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
@@ -26,6 +28,9 @@ def main():
     df2 = read_name_basics(spark_session, path_name_basics, name_basics_schema)
     df2.show()
     task2(df2, path_task2)
+    df3 = read_title_basics(spark_session, path_title_basics, title_basics_schema)
+    df3.show()
+    task3(df3, path_task3)
 
 
 if '__main__' == __name__:
