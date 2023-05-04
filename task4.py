@@ -6,12 +6,12 @@ def task4 (df_princ, df_name, df_title, path_to_save):
     """Отримайте імена людей, відповідні фільми/серіали та персонажі,
      які вони грали у тих фільмах
      Аргументи:
-         df_princ: фрейм даних принципалів
-         df_name: назва кадру даних
-         df_title: фрейм даних заголовка
-         path_to_save: шлях для збереження набору даних
+         df_princ: principals dataframe
+         df_name: name dataframe
+         df_title: title dataframe
+         path_to_save: шлях до теки  збереження вихідних результатів
      Результат:
-         out_df:  сформований набір даних
+         out_df:  посилання на сформований набір даних
     """
     df_princ = df_princ.drop(job, ordering).filter(f.col(category) == 'actor')
     df_title = df_title.drop(originalTitle,

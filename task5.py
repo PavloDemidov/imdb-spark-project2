@@ -8,9 +8,9 @@ def task5(df_akas, df_title, path_to_save):
      Аргументи:
          df_akas: title akas dataframe
          df_title: title dataframeа
-         path_to_save: шлях для збереження набору даних
+         path_to_save: шлях до теки  збереження вихідних результатів
      Результат:
-         out_df:  сформований набору даних
+         out_df:  посилання на сформований набір даних
     """
 
     df_akas = df_akas.filter(f.col(region).isNotNull()).select(f.col(titleId).alias('tconst'),

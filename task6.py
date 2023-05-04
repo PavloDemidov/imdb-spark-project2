@@ -7,12 +7,11 @@ def task6(df_episode, df_title, path_to_save):
      епізодів
 
      Аргументи:
-         df_episode: датафрейм епізодів
-         df_title: фрейм даних заголовка
-         path_to_save: шлях для збереження набору даний епізодів
-
+         df_episode: episode dataframe
+         df_title: title dataframe
+         path_to_save: шлях до теки  збереження вихідних результатів
      Результат:
-         out_df:  сформований набір даних
+         out_df:  посилання на сформований набір даних
     """
     df_title=df_title.select(f.col(tconst).alias(parentTconst),
                              primaryTitle).filter((f.col(titleType)=='tvSeries'))
