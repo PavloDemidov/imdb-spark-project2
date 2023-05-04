@@ -10,6 +10,8 @@ from task1 import *
 from task2 import *
 from task3 import *
 from task4 import *
+from task5 import *
+from task6 import *
 
 os.environ['PYSPARK_PYTHON'] = sys.executable
 os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
@@ -34,6 +36,9 @@ def main():
     movies_df4 = read_df(spark_session, path_principals, principals_schema)
     movies_df4.show()
     task4(movies_df4, movies_df2, movies_df3, path_task4)
+    task5(movies_df1, movies_df3, path_task5)#
+    movies_df5 = read_df(spark_session, path_episode, episode_schema)
+    task6(movies_df5, movies_df3, path_task6)
 
 
 if '__main__' == __name__:
