@@ -7,8 +7,8 @@ path_name_basics = 'imdb-data/name.basics.tsv.gz'
 path_task2 = 'imdb-result2/task2'
 path_title_basics = 'imdb-data/title.basics.tsv.gz'
 path_task3 = 'imdb-result3/task3'
-
-
+path_principals = 'imdb-data/title.principals.tsv.gz'
+path_task4 = 'imdb-result4/task4'
 
 akas_schema = t.StructType([t.StructField('titleId', t.StringType(), False),
                             t.StructField('ordering', t.IntegerType(), True),
@@ -38,3 +38,10 @@ title_basics_schema = t.StructType([t.StructField('tconst', t.StringType(), Fals
                                     t.StructField('runtimeMinutes', t.IntegerType(), True),
                                     t.StructField('genres', t.StringType(), True)
                                     ])
+principals_schema=t.StructType([t.StructField('tconst', t.StringType(), False),
+                                t.StructField('ordering', t.IntegerType(), True),
+                                t.StructField('nconst', t.StringType(), True),
+                                t.StructField('category', t.StringType(), True),
+                                t.StructField('job', t.StringType(), True),
+                                t.StructField('characters', t.StringType(), True),
+                                ])
