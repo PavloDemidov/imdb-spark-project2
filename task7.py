@@ -8,7 +8,7 @@ def task7(df_ratings, df_title, path_to_save):
      Аргументи:
          df_ratings: ratings dataframe
          df_title: title dataframe
-         path_to_save: шлях до вихідного набору даних
+         path_to_save: шлях до теки  збереження вихідних результатів
      Результат:
          out_df: посилання на сформований набір даних
     """

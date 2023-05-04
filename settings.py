@@ -13,6 +13,7 @@ path_episode = 'imdb-data/title.episode.tsv.gz'
 path_task6 = 'imdb-result6/task6'
 path_ratings = 'imdb-data/title.ratings.tsv.gz'
 path_task7 = 'imdb-result7/task7'
+path_task8 = 'imdb-result8/task8'
 
 akas_schema = t.StructType([t.StructField('titleId', t.StringType(), False),
                             t.StructField('ordering', t.IntegerType(), True),
