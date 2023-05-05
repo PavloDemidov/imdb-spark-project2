@@ -2,10 +2,8 @@ from columns import *
 import pyspark.sql.functions as f
 
 def task6(df_episode, df_title, path_to_save):
-    """Отримnb інформацію про кількість епізодів у кожному серіалі.
-    Отримайте     Їх 50, починаючи з серіалу з найбільшою кількістю
-     епізодів
-
+    """Отримати інформацію про кількість епізодів у кожному серіалі.
+    Отримайте їх 50, починаючи з серіалу з найбільшою кількістю  епізодів
      Аргументи:
          df_episode: episode dataframe
          df_title: title dataframe
