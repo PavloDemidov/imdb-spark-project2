@@ -4,7 +4,6 @@ import pyspark.sql.types as t
 
 def task7(df_ratings, df_title, path_to_save):
     """Отримайте 10 назв найпопулярніших фільмів/серіалів за кожне десятиліття
-
      Аргументи:
          df_ratings: ratings dataframe
          df_title: title dataframe
