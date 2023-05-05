@@ -3,13 +3,12 @@ import pyspark.sql.functions as f
 import pyspark.sql.types as t
 
 def task8(df_ratings, df_title, path_to_save):
-    """Get 10 titles of the most popular movies/series etc. by each genre
-
-    Args:
+    """Отримайте 10 назв найпопулярніших фільмів/серіалів за кожне десятиліття
+     Аргументи:
         df_ratings: ratings dataframe
         df_title: title dataframe
         path_to_save: шлях до теки  збереження вихідних результатів
-     Результат:
+      Результат:
          out_df: посилання на сформований набір даних
     """
     df_title=df_title.select(tconst,
